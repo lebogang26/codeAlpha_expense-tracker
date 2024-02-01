@@ -64,7 +64,7 @@ function loadExpenses() {
     expenseList.innerHTML = '';
 
     if (expenses.length === 0) {
-        expenseList.innerHTML = '<p>No expenses recorded.</p>';
+        expenseList.innerHTML = '<p>No expenses available.</p>';
     } else {
         expenses.forEach(expense => {
             const div = document.createElement('div');
