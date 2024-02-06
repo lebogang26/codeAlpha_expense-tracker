@@ -64,7 +64,7 @@ function loadExpenses() {
     expenseList.innerHTML = '';
 
     if (expenses.length === 0) {
-        expenseList.innerHTML = '<p>No expenses available.</p>';
+        expenseList.innerHTML = '<p>No expenses recorded.</p>';
     } else {
         expenses.forEach(expense => {
             const div = document.createElement('div');
@@ -72,13 +72,14 @@ function loadExpenses() {
             div.innerHTML = `
                 <span>${expense.description}</span>
                 <span>${expense.amount}</span>
-                <button onclick="editExpense(${expense.id})">Edit</button>
-                <button onclick="deleteExpense(${expense.id})">Delete</button>
+                <button onclick="editExpense(${expense.id})"><i class="fas fa-edit"></i></button>
+                <button onclick="deleteExpense(${expense.id})"><i class="fas fa-trash-alt"></i></button>
             `;
             expenseList.appendChild(div);
         });
     }
 }
+
 
 function getExpenses() {
     const expensesString = localStorage.getItem('expenses');
